@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 import { ReCaptcha2Component } from '../../projects/ngx-captcha-lib/src/public_api';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 declare var hljs: any;
 
@@ -80,10 +80,10 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 
   @ViewChild('captchaElem', { static: false }) captchaElem: ReCaptcha2Component;
   @ViewChild('langInput', { static: false }) langInput: ElementRef;
-  public aFormGroup: FormGroup;
+  public aFormGroup: UntypedFormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
