@@ -313,8 +313,9 @@ export abstract class BaseReCaptchaComponent
     // create captcha wrapper
     this.createAndSetCaptchaElem();
 
-    this.scriptService.registerCaptchaScript(
-      this.useGlobalDomain,
+    this.scriptService.registerCaptchaScript({
+      useGlobalDomain: true
+    },
       "explicit",
       (grecaptcha) => {
         this.onloadCallback(grecaptcha);
